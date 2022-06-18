@@ -60,7 +60,7 @@
         <div class="col-md-6 col-xl-3">
             <article class="stat-cards-item">
             <div class="stat-cards-icon success">
-                <i data-feather="feather" aria-hidden="true"></i>
+                <i data-feather="user-check" aria-hidden="true"></i>
             </div>
             <div class="stat-cards-info">
                 <p class="stat-cards-info__num">1478 286</p>

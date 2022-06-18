@@ -44,9 +44,10 @@
                     url: '{{route('login_auth')}}',
                     success: function(e){
                         if(e.success) {
-                            alert('SUccesss')
-                        } else {
-                            alert('failed')
+                            swal("Horee!!","You're login successfully", "success");
+                            window.location = "{{route('home')}}"
+                        } else if(e.error) {
+                            swal("Yah!!","An error occured email or password", "error");
                         }
                     }
                 });
