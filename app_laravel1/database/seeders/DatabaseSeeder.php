@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -15,10 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => 'adminer',
-            'email' => 'adminer123@gmail.com',
-            'password' => bcrypt('adminer123')
-        ]);
+        $this->call(AuthSeeder::class);
     }
 }

@@ -21,7 +21,7 @@ class LoginController extends Controller
                 return response()->json(['success' => 'Successfully Logged In']);
  
         } else {
-            return response()->json(['error'=> 'Something went wrong']);
+            return response()->json(['warning'=> 'Something went wrong']);
         }
     }
 

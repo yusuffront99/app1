@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth']], function(){
 });
 
 Route::prefix('admin')
+    ->middleware(['auth','admin'])
     ->group(function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 });
