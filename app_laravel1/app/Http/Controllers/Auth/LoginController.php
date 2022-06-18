@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -22,5 +23,14 @@ class LoginController extends Controller
         } else {
             return response()->json(['error'=> 'Something went wrong']);
         }
+    }
+
+    public function logout()
+    {
+        Session::flush();
+        
+        Auth::logout();
+
+        return redirect('/');
     }
 }

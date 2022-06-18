@@ -9,6 +9,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
     @include('includes.header')
+    @stack('style.css')
 </head>
 
 <body>

@@ -21,9 +21,13 @@ use Illuminate\Support\Facades\Route;
 //     return view('pages.adminer.dashboard');
 // });
 
-Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::post('/login_auth', [LoginController::class, 'login_auth'])->name('login_auth');
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/home', [HomeController::class, 'home'])->name('home');
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+});
 
 Route::prefix('admin')
     ->group(function(){
