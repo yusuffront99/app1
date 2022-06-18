@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/', [LoginController::class, 'login'])->name('login');
+Route::post('/login_auth', [LoginController::class, 'login_auth'])->name('login_auth');
 
 Route::prefix('admin')
     ->group(function(){

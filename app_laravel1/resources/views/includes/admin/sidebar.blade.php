@@ -23,7 +23,7 @@
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
-                        <span class="icon document" aria-hidden="true"></span>Posts
+                        <span class="icon document" aria-hidden="true"></span>Data Operator
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
                             <span class="icon arrow-down" aria-hidden="true"></span>
@@ -31,16 +31,16 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="posts.html">All Posts</a>
+                            <a href="posts.html">Operator Lokal</a>
                         </li>
                         <li>
-                            <a href="new-post.html">Add new post</a>
+                            <a href="new-post.html">Operator CCR</a>
                         </li>
                     </ul>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
-                        <span class="icon folder" aria-hidden="true"></span>Categories
+                        <span class="icon folder" aria-hidden="true"></span>Data Laporan
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
                             <span class="icon arrow-down" aria-hidden="true"></span>
@@ -48,7 +48,7 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="categories.html">All categories</a>
+                            <a href="categories.html">Laporan Operator</a>
                         </li>
                     </ul>
                 </li>
@@ -70,7 +70,7 @@
                 <picture><source srcset="{{asset('frontends/img/avatar/avatar-illustrated-01.webp')}}" type="image/webp"><img src="{{asset('frontends/img/avatar/avatar-illustrated-01.png')}}" alt="User name"></picture>
             </span>
             <div class="sidebar-user-info">
-                <span class="sidebar-user__title">Nafisa Sh.</span>
+                <span class="sidebar-user__title">yusuffront@</span>
                 <span class="sidebar-user__subtitle">Support manager</span>
             </div>
         </a>
