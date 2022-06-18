@@ -1,5 +1,9 @@
 <?php
 
+
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.adminer.dashboard');
+// Route::get('/', function () {
+//     return view('pages.adminer.dashboard');
+// });
+
+Route::get('/home', [HomeController::class, 'home'])->name('home');
+Route::get('/', [LoginController::class, 'login'])->name('login');
+
+Route::prefix('admin')
+    ->group(function(){
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 });

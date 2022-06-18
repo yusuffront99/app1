@@ -8,8 +8,7 @@
     <title>Elegant Dashboard | Dashboard</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="{{asset('frontends/css/style.min.css')}}">
+    @include('includes.header')
 </head>
 
 <body>

@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
     <!-- ! Main -->
     <main class="main users chart-page" id="skip-target">
     <div class="container">
-        <h2 class="main-title">Dashboard</h2>
+        <h2 class="main-title">Home</h2>
         <div class="row stat-cards">
         <div class="col-md-6 col-xl-3">
             <article class="stat-cards-item">
