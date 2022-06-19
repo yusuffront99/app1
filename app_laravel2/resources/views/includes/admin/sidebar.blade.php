@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('dashboard')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -54,7 +54,10 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header"> Data Operator</h6>
                 <a class="collapse-item" href="{{route('lokal.index')}}">Operator Lokal</a>
-                <a class="collapse-item" href="#">Operator CCR</a>
+                <a class="collapse-item" href="{{route('ccr.index')}}">Operator CCR</a>
+                <div class="m-2">
+                    <a href="{{route('operator')}}" class="btn btn-success btn-sm p-2"><i class="fa fa-plus-circle"></i> Tambah Operator Baru</a>
+                </div>
             </div>
         </div>
     </li>
