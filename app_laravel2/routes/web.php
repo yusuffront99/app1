@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\LocalController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,9 @@ Route::post('/auth_logout', [loginController::class, 'auth_logout'])->name('auth
 // ---Home
 Route::get('/home', [HomeController::class, 'home'])->name('home')->middleware('auth');
 // --- Admin
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')
+    ->middleware(['auth','admin'])
+    ->group(function(){
         Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+        Route::resource('/lokal', LocalController::class);
     });

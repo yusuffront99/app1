@@ -189,10 +189,6 @@
                     Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                {{-- <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Logout
-                </a> --}}
                 <form action="{{route('auth_logout')}}" method="POST" class="mr-3 ml-4">
                     @csrf
                     <button type="submit" class="btn btn-sm btn-danger p-2 mr-2"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>logout</button>
