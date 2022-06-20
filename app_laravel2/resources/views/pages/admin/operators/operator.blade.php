@@ -95,6 +95,9 @@
                                 text: "You clicked the button!",
                                 icon: "success",
                             });
+                            $("#form-operator")[0].reset(),
+                            $("span").remove('#error')
+                            
                         } else if(e.error) {
                             swal({
                                 title: "Good job!",
@@ -102,8 +105,13 @@
                                 icon: "warning",
                             });
                         }
+                    },
+                    error: function(err){
+                        $.each(err.responseJSON.errors,function(field_name,error){
+                        $(document).find('[name='+field_name+']').after('<span class="text-strong text-danger" id="error">' +error+ '</span>')
+                        })
                     }
-                })
+                });
             });
         });
     </script>

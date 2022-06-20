@@ -15,12 +15,12 @@ class OperatorController extends Controller
 
     public function create_operator(Request $request)
     {
-        // $validate_data = $request->validate([
-        //     "nama_lengkap" => "required|max:255",
-        //     "nip" => "required",
-        //     "email" => 'required|email|unique:users,email',
-        //     "password" => 'required'
-        // ]);
+        $this->validate($request, [
+            "nama_lengkap" => "required|max:255",
+            "nip" => "required",
+            "email" => 'required|email|unique:users,email',
+            "password" => 'required'
+        ]);
 
         // User::updateOrCreate($validate_data);
 
@@ -38,6 +38,10 @@ class OperatorController extends Controller
             $user->nip = $request['nip'];
             $user->email = $request['email'];
             $user->password = bcrypt($request['password']);
+            $user->tanggal_lahir = $request['tanggal_lahir'];
+            $user->jabatan = $request['jabatan'];
+            $user->grade = $request['grade'];
+            // $user->grade = $request['grade'];
         }
 
         $user->save();
