@@ -3,8 +3,8 @@
 use App\Http\Controllers\Admin\CcrController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LocalController;
-use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\OperatorController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,8 +30,8 @@ Route::prefix('admin')
     ->middleware(['auth','admin'])
     ->group(function(){
         Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
-        Route::get('/operator', [AuthController::class, 'index'])->name('operator');
-        Route::post('/operator_create', [AuthController::class, 'operator_create'])->name('operator_create');
+        Route::get('/operator', [OperatorController::class, 'index'])->name('operator');
+        Route::post('/create_operator', [OperatorController::class, 'create_operator'])->name('create_operator');
         
         Route::resource('/lokal', LocalController::class);
         Route::resource('/ccr', CcrController::class);
