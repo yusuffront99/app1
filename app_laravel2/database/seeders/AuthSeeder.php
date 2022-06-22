@@ -19,6 +19,9 @@ class AuthSeeder extends Seeder
             'nip' => '9988771DY',
             'email' => 'adminer@gmail.com',
             'password' => bcrypt('adminer'),
+            'tanggal_lahir' => '1999-02-16',
+            'jabatan' => 'operator_boiler',
+            'grade' => 'fungsional'
         ]);
     }
 }

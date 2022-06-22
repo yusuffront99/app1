@@ -11,6 +11,7 @@
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                 <form id="form-operator" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -56,12 +57,16 @@
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="foto_profil">Foto Profil</label>
-                                <input type="file" name="foto_profil" class="form-control" id="foto_profil" placeholder="foto_profil">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="foto_profil">Foto Profil</label>
+                                        <input type="file" name="foto_profil" class="form-control" id="foto_profil" placeholder="foto_profil">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <img alt="" id="preview-image" width="100px">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <button type="submit" class="btn btn-primary btn-block" id="btn-operator">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -79,6 +84,19 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+
+            $('#foto_profil').change(function(){
+                var reader = new FileReader();
+                reader.onload = (e) => {
+                    $('#preview-image').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(this.files[0])
+            });
+
+            // if($('#icon-x').click((e)=> {
+            //     $('#preview-image').remove();
+            //     reader.readAsDataURL(this.files[0]).reset();
+            // }))
 
             $('#btn-operator').click((e)=> {
                 e.preventDefault();

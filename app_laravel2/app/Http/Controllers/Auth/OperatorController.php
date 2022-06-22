@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\File;
 
 class OperatorController extends Controller
 {
@@ -19,14 +20,9 @@ class OperatorController extends Controller
             "nama_lengkap" => "required|max:255",
             "nip" => "required",
             "email" => 'required|email|unique:users,email',
-            "password" => 'required'
+            "password" => 'required',
+            "foto_profil" => 'mimes:png,jpg|max:2048'
         ]);
-
-        // User::updateOrCreate($validate_data);
-
-        // return response()->json([
-        //     'success' => 'Added Data Successfully'
-        // ], 200);
 
         $user = User::where('email', $request['email'])->first();
         
@@ -34,6 +30,7 @@ class OperatorController extends Controller
             return response()->json(['error' => 'Email Already Exists']);
         } else {
             $user = new User;
+            
             $user->nama_lengkap = $request['nama_lengkap'];
             $user->nip = $request['nip'];
             $user->email = $request['email'];
@@ -41,10 +38,12 @@ class OperatorController extends Controller
             $user->tanggal_lahir = $request['tanggal_lahir'];
             $user->jabatan = $request['jabatan'];
             $user->grade = $request['grade'];
-            // $user->grade = $request['grade'];
         }
 
         $user->save();
-        return response()->json(['success' => 'User Registered Successfully']);
+        
+        return response()->json([
+            'success' => 'Added Data Successfully'
+        ], 200);
     }
 }
