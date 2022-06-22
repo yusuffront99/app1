@@ -5,9 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\File;
 
-class OperatorController extends Controller
+class AuthController extends Controller
 {
     public function index()
     {
@@ -45,5 +44,10 @@ class OperatorController extends Controller
         return response()->json([
             'success' => 'Added Data Successfully'
         ], 200);
+    }
+
+    public function show_operator($id)
+    {
+        return view('pages.profiles.show');
     }
 }

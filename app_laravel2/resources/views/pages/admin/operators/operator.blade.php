@@ -55,18 +55,9 @@
                                     <option value="sistem">Sistem</option>
                                 </select>
                             </div>
-                            <br>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <label for="foto_profil">Foto Profil</label>
-                                        <input type="file" name="foto_profil" class="form-control" id="foto_profil" placeholder="foto_profil">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <img alt="" id="preview-image" width="100px">
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-primary btn-block" id="btn-operator">Submit</button>
                         </div>
                     </div>
                 </form>

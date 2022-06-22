@@ -74,6 +74,7 @@
         </div>
     </div>
     @include('includes.scripts')
+    @stack('add-main-script')
 </body>
 
 </html>
