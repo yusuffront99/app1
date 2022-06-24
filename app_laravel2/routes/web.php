@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Operator\OperatorController;
+use App\Http\Controllers\Operator\ProfileController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Constraint\Operator;
 
@@ -30,8 +31,6 @@ Route::prefix('home')
     ->middleware('auth')
     ->group(function(){
         Route::get('/', [HomeController::class, 'home'])->name('home');
-        Route::get('/show_operator/{id}', [AuthController::class, 'show_operator'])->name('show.operator');
-        Route::get('/foto', [OperatorController::class, 'index'])->name('foto');
     });
 
 
@@ -40,9 +39,5 @@ Route::prefix('admin')
     ->middleware(['auth','admin'])
     ->group(function(){
         Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
-        Route::get('/operator', [AuthController::class, 'index'])->name('operator');
-        Route::post('/create_operator', [AuthController::class, 'create_operator'])->name('create_operator');
-        
-        Route::resource('/lokal', LocalController::class);
-        Route::resource('/ccr', CcrController::class);
+        Route::resource('/operator', AuthController::class);
     });

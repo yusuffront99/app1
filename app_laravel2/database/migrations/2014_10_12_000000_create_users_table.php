@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('tanggal_lahir');
             $table->string('jabatan');
             $table->string('grade');
+            $table->bigInteger('profile_id')->default('1');
             $table->string('is_role')->default('operator');
             $table->rememberToken();
             $table->timestamps();

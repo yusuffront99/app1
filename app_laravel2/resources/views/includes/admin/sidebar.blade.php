@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('home')}}">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{route('dashboard')}}">
+        <a class="nav-link" href="">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -53,10 +53,10 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header"> Data Operator</h6>
-                <a class="collapse-item" href="{{route('lokal.index')}}">Operator Lokal</a>
-                <a class="collapse-item" href="{{route('ccr.index')}}">Operator CCR</a>
+                <a class="collapse-item" href="">Operator Lokal</a>
+                <a class="collapse-item" href="">Operator CCR</a>
                 <div class="m-2">
-                    <a href="{{route('operator')}}" class="btn btn-success btn-sm p-2"><i class="fa fa-plus-circle"></i> Tambah Operator Baru</a>
+                    <a href="{{route('operator.create')}}" class="btn btn-success btn-sm p-2"><i class="fa fa-plus-circle"></i> Tambah Operator Baru</a>
                 </div>
             </div>
         </div>

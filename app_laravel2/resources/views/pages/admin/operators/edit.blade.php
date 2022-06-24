@@ -5,7 +5,7 @@
 
         <!-- Page Heading -->
         <br>
-        <h6 class="h3 mb-2 text-gray-800"><small><a href="">Operator <i class="fa fa-chevron-right"></i></a></small> Tambah Operator Baru</h6>
+        <h6 class="h3 mb-2 text-gray-800"><small><a href="">Operator <i class="fa fa-chevron-right"></i></a></small> Edit Operator Baru</h6>
         <hr>
         <div class="col-lg-12 col-md-12 col-sm-12 text-primary p-2">
             <div class="card border-left-primary shadow h-100 py-2">
@@ -67,7 +67,7 @@
     </div>
 @endsection
 
-@push('add-admin-script')
+{{-- @push('add-admin-script')
     <script>
         $(document).ready(function(){
             $.ajaxSetup({
@@ -76,19 +76,6 @@
                 }
             });
 
-            $('#foto_profil').change(function(){
-                var reader = new FileReader();
-                reader.onload = (e) => {
-                    $('#preview-image').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(this.files[0])
-            });
-
-            // if($('#icon-x').click((e)=> {
-            //     $('#preview-image').remove();
-            //     reader.readAsDataURL(this.files[0]).reset();
-            // }))
-
             $('#btn-operator').click((e)=> {
                 e.preventDefault();
 
@@ -96,7 +83,7 @@
                     data: $('#form-operator').serialize(),
                     type: 'POST',
                     dataType : 'JSON',
-                    url : "{{route('create_operator')}}",
+                    url : "{{route('operator.store')}}",
                     success : function(e){
                         if(e.success){
                             swal({
@@ -106,7 +93,7 @@
                             });
                             $("#form-operator")[0].reset(),
                             $("span").remove('#error')
-                            
+                            window.location = "{{route('dashboard')}}"
                         } else if(e.error) {
                             swal({
                                 title: "Good job!",
@@ -124,4 +111,4 @@
             });
         });
     </script>
-@endpush
+@endpush --}}
