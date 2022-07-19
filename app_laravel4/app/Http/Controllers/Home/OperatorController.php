@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Operator;
 use Illuminate\Http\Request;
 
 class OperatorController extends Controller
@@ -12,11 +13,7 @@ class OperatorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('pages.Operator.index');
-    }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +21,7 @@ class OperatorController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.Operator.index');
     }
 
     /**
@@ -35,7 +32,28 @@ class OperatorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file = $request->file('foto');
+		$fileName = time() . '.' . $file->getClientOriginalExtension();
+		$file->storeAs('public/profiles', $fileName);
+
+		$Data = [
+            'nama_lengkap' => $request->nama_lengkap,
+            'nip' => $request->nip,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'jabatan' => $request->jabatan,
+            'grade' => $request->grade,
+            'shift' => $request->shift,
+            'supervisor' => $request->supervisor,
+            'status' => $request->status, 
+            'foto' => $fileName,
+            
+        ];
+
+		Operator::create($Data);
+		return response()->json([
+			'success' => 200,
+		]);
     }
 
     /**

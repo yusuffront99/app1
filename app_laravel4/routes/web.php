@@ -32,3 +32,4 @@ Route::post('register/store', [AuthController::class, 'register_store'])->name('
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 
 Route::resource('/home/operator', OperatorController::class);
+

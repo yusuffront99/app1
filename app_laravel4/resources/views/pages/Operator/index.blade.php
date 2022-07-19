@@ -10,7 +10,8 @@
                 <h6 class="text-center text-primary">My Profile</h6>
                 <hr>
                 <div class="row">
-                    <form action="" enctype="multipart/form-data">
+                    <form method="POST" id="form-profil" enctype="multipart/form-data">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -75,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="d-grid gap-2 mt-2">
-                                <button class="btn btn-primary" type="submit" id="btn-profile">simpan</button>
+                                <button class="btn btn-primary" type="submit" id="btn-profil">simpan</button>
                             </div>
                         </div>
                     </form>
@@ -84,3 +85,35 @@
         </div>
     </div>
 @endsection
+
+@push('add-script')
+    <script>
+        $(document).ready(function(){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('#form-profil').submit(function(e){
+                e.preventDefault();
+                let data = new FormData(this);
+                
+                $.ajax({
+                    url: "{{route('operator.store')}}",
+                    method: 'POST',
+                    data: data,
+                    dataType: 'JSON',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data){
+                        if(data.success){
+                            alert(true);
+                        }
+                    }
+                }); 
+            });
+        });
+    </script>
+@endpush
