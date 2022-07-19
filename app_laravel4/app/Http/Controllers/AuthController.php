@@ -22,7 +22,7 @@ class AuthController extends Controller
                 return response()->json(['success' => true], 200);
         } else {
                 return response()->json(['warning'=> 'Something went wrong']);
-        }
+        }  
     }
 
     public function register()

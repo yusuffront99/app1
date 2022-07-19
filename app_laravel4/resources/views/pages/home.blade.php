@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Menu Operator</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <a href="#" class="btn btn-primary">Go Operator</a>
+                        <a href="{{route('operator.index')}}" class="btn btn-primary">Go Operator</a>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                         Featured
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Menu Laporan/h5>
+                        <h5 class="card-title">Menu Laporan</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <a href="#" class="btn btn-primary">Go Laporan</a>
                     </div>

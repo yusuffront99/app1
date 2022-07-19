@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Home\OperatorController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +26,9 @@ Route::post('/login-action', [AuthController::class, 'login_action'])->name('log
 
 Route::get('register', [AuthController::class, 'register'])->name('register');
 Route::post('register/store', [AuthController::class, 'register_store'])->name('register-store');
+
+
+// ===== ROUTE AUTH LOGIN
+Route::get('/home', [HomeController::class, 'home'])->name('home');
+
+Route::resource('/home/operator', OperatorController::class);

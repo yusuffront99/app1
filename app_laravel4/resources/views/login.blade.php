@@ -5,6 +5,7 @@
         <h3 class="text-center mb-4">Form Login</h3>
         <hr>
         <form id="form-login">
+            @csrf
             <div class="col-lg-5 col-md-5 m-auto">
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -43,19 +44,20 @@
                     data: $('#form-login').serialize(),
                     dataType: "JSON",
                     success: function(data){
-                        if(data.success) {
+                        if(data.success){
                             swal({
-                                title: "Horeee!",
-                                text: "You're login successfully!",
+                                title: "Good job!",
+                                text: "You clicked the button!",
                                 icon: "success",
                             });
+                            $("#form-login")[0].reset(),
+                            window.location = "{{route('home')}}"
                         } else if(data.warning) {
                             swal({
                                 title: "Yah!",
                                 text: "An error occrued email or password!",
                                 icon: "warning",
                             });
-                            $("#form-login")[0].reset()
                         }
                     }
                 });
@@ -63,3 +65,4 @@
         });
     </script>
 @endpush
+
