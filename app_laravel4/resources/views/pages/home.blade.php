@@ -44,7 +44,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Menu Laporan</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="#" class="btn btn-primary">Go Laporan</a>
+                        <a href="{{route('laporan.index')}}" class="btn btn-primary">Go Laporan</a>
                     </div>
                 </div>
             </div>
