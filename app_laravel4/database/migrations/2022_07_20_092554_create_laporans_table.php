@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('summary');
             $table->longText('info');
-            $table->enum('status', ['setuju', 'ditolak', 'menunggu'])->default('menunggu');
+            $table->string('status');
             $table->timestamps();
         });
     }

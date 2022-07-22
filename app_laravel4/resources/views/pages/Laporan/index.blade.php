@@ -4,7 +4,7 @@
     <div class="container m-4">
         <h3 class="mt-2 text-center text-primary">Data Laporan</h3>
         <hr>
-        <a href="" class="btn btn-primary">+ Buat Laporan</a>
+        <a href="{{route('laporan.create')}}" class="btn btn-primary">+ Buat Laporan</a>
         <div class="m-3">
             <table class="table table-bordered laporan_datatable">
                 <thead>
@@ -29,6 +29,13 @@
             processing: true,
             serverSide: true,
             ajax: "{{ route('laporan.index') }}",
+            // dom: 'Bfrtip',
+            // buttons: [
+            //     'copyHtml5',
+            //     'excelHtml5',
+            //     'csvHtml5',
+            //     'pdfHtml5'
+            // ],
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'users', name: 'users.username'},

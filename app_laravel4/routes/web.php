@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Home\LaporanController;
 use App\Http\Controllers\Home\OperatorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SupervisorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +38,6 @@ Route::resource('/home/operator', OperatorController::class);
 
 // ====== ROUTE LAPORAN
 Route::resource('/home/laporan', LaporanController::class);
+
+// ====== ROUTE SUPERVISOR
+Route::get('/supervisor', [SupervisorController::class, 'index'])->name('supervisor-index');

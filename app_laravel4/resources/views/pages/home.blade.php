@@ -32,7 +32,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Menu Foto</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="#" class="btn btn-primary">Go Foto</a>
+                        <a href="{{route('supervisor-index')}}" class="btn btn-primary">Go Supervisor</a>
                     </div>
                 </div>
             </div>
